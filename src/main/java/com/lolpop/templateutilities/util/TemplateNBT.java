@@ -6,7 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 public class TemplateNBT {
     public static void setTemplateNBT(ItemStack stack, String name, String author, String template) {
         try {
-            byte[] b64 = GzFormat.encryptBase64(GzFormat.compress(template.getBytes()));
+            byte[] b64 = GzFormat.encryptBase64(GzFormat.compress(template.getBytes("UTF-8")));
             String exported = new String(b64);
             final CompoundNBT nbt = new CompoundNBT();
 
